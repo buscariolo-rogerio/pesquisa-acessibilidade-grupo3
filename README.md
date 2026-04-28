@@ -25,8 +25,8 @@ A **GlitchStore** é o MVP de um e-commerce especializado em **periféricos game
 | Integrante | Tema de Pesquisa | Papel nas Fases Futuras |
 |---|---|---|
 | **Rogerio** | LBI + Proteção Legal para Devs | UI/UX Design (Figma) |
-| **Nascimento** | ADA + Dados de Processos nos EUA | Front-end (JS Vanilla) |
-| **Enzo** | e-MAG + Ferramentas BR (ASES, VLibras) | Back-end + Banco de Dados |
+| **Enzo N.** | ADA + Dados de Processos nos EUA | Front-end (JS Vanilla) |
+| **Enzo C.** | e-MAG + Ferramentas BR (ASES, VLibras) | Back-end + Banco de Dados |
 | **Noé** | WCAG 2.1/2.2 + EAA (Lei Europeia 2025) | Documentação Técnica + QA |
 
 ---
@@ -61,7 +61,7 @@ A ausência desses documentos agrava a responsabilidade em caso de processo, poi
 
 ---
 
-### 1.2 Nascimento — ADA (Americans with Disabilities Act) e Dados de Processos Digitais nos EUA
+### 1.2 Enzo N. — ADA (Americans with Disabilities Act) e Dados de Processos Digitais nos EUA
 
 #### O que é a ADA?
 A **Americans with Disabilities Act (ADA)**, lei federal americana de 1990, proíbe discriminação contra pessoas com deficiência em diversas esferas — emprego, transporte, serviços públicos e, crucialmente, **comércio**. O **Título III** da ADA exige que "lugares de acomodação pública" sejam acessíveis.
@@ -87,7 +87,7 @@ Processo coletivo (*class action*) movido pela National Federation of the Blind.
 
 ---
 
-### 1.3 Enzo — e-MAG e Ferramentas Brasileiras de Conformidade
+### 1.3 Enzo C. — e-MAG e Ferramentas Brasileiras de Conformidade
 
 #### O que é o e-MAG?
 O **Modelo de Acessibilidade em Governo Eletrônico (e-MAG)** é o padrão técnico brasileiro de acessibilidade para sites e sistemas. Desenvolvido pelo **Governo Federal (SLTI/MP)** e baseado nas diretrizes internacionais da WCAG, ele adapta os padrões globais à realidade brasileira — incluindo a obrigatoriedade do suporte a **Libras** (Língua Brasileira de Sinais) e às especificidades do idioma português.
@@ -309,7 +309,7 @@ Disciplina: Desenvolvimento de Aplicações Dinâmicas | Germinare Tech | 2025
 - [ ] Documentar Design System no próprio Figma
 
 ### Fase 3 — Front-end (HTML + CSS + JS Vanilla)
-**Responsável principal: Nascimento** | Suporte: Enzo (integração com API)
+**Responsável principal: Enzo N.** | Suporte: Enzo C. (integração com API)
 
 - [ ] Implementar HTML semântico (`<nav>`, `<main>`, `<article>`, `<aside>`)
 - [ ] Atributos ARIA onde HTML semântico não for suficiente
@@ -319,7 +319,7 @@ Disciplina: Desenvolvimento de Aplicações Dinâmicas | Germinare Tech | 2025
 - [ ] Validar com ASES e ajustar
 
 ### Fase 4 — Back-end e Banco de Dados
-**Responsável principal: Enzo** | Suporte: Nascimento (consumo de API)
+**Responsável principal: Enzo C.** | Suporte: Enzo N. (consumo de API)
 
 - [ ] Modelar banco de dados (produtos, usuários, pedidos, endereços)
 - [ ] Desenvolver API REST (endpoints: produtos, auth, carrinho, pedidos)
@@ -358,7 +358,7 @@ CABEÇALHO SUGERIDO PARA O WORD:
 GERMINARE TECH — ENSINO MÉDIO
 Disciplina: Desenvolvimento de Aplicações Dinâmicas
 Projeto: GlitchStore — E-Commerce Acessível
-Equipe: Squad NexCode (Rogerio, Nascimento, Enzo, Noé)
+Equipe: Squad NexCode (Rogerio, Enzo N., Enzo C., Noé)
 Fase 1: Pesquisa de Acessibilidade e Planejamento do MVP
 Data de Entrega: [INSERIR DATA]
 ________________________________________
@@ -366,8 +366,8 @@ SUMÁRIO
 
 1. Introdução e Justificativa
 2. Pesquisa Individual — Rogerio: LBI e Proteção Legal
-3. Pesquisa Individual — Nascimento: ADA e Processos nos EUA
-4. Pesquisa Individual — Enzo: e-MAG e Ferramentas Brasileiras
+3. Pesquisa Individual — Enzo N.: ADA e Processos nos EUA
+4. Pesquisa Individual — Enzo C.: e-MAG e Ferramentas Brasileiras
 5. Pesquisa Individual — Noé: WCAG 2.1/2.2 e EAA
 6. Pesquisa Coletiva: Casos Reais e Linha do Tempo
 7. Planejamento do MVP — GlitchStore
@@ -443,7 +443,7 @@ Existem 4 práticas documentadas que reduzem o risco jurídico:
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-3. NASCIMENTO — ADA E DADOS DE PROCESSOS NOS EUA
+3. Enzo N. — ADA E DADOS DE PROCESSOS NOS EUA
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 3.1 O que é a ADA?
@@ -484,7 +484,7 @@ do site. Um dos primeiros marcos do e-commerce em acessibilidade.
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-4. ENZO — e-MAG E FERRAMENTAS BRASILEIRAS (ASES, VLIBRAS)
+4. Enzo C. — e-MAG E FERRAMENTAS BRASILEIRAS (ASES, VLIBRAS)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 4.1 O que é o e-MAG?
@@ -648,11 +648,11 @@ markdown
 
 ---
 
-## ⏱️ ABERTURA — ENZO [0:00 – 1:00] (1 minuto)
+## ⏱️ ABERTURA — Enzo C. [0:00 – 1:00] (1 minuto)
 
 [SLIDE 1: Logo da GlitchStore + nome da equipe em destaque. Fundo escuro, estilo gamer.]
 
-**Enzo (com energia, olhando para a turma):**
+**Enzo C. (com energia, olhando para a turma):**
 
 "Bom dia a todos. Nós somos o Squad NexCode, e a pergunta que guia nosso
 projeto hoje é simples: se você tivesse um e-commerce, e um cliente com
@@ -684,7 +684,7 @@ ele vai existir. Rogerio, pode começar."
 
 **Rogerio:**
 
-"Obrigado, Enzo. Lei nº 13.146 de 2015 — a Lei Brasileira de Inclusão.
+"Obrigado, Enzo C.. Lei nº 13.146 de 2015 — a Lei Brasileira de Inclusão.
 Muita gente acha que acessibilidade digital é opcional. Não é."
 
 "O Artigo 63 da LBI diz textualmente que qualquer empresa com sede no
@@ -704,17 +704,17 @@ barreiras."
 "A ausência dessas práticas não é só uma falha técnica. Em um processo
 judicial, ela é prova de negligência."
 
-*"Passo para o Nascimento, que vai mostrar o que acontece quando empresas
+*"Passo para o Enzo N., que vai mostrar o que acontece quando empresas
 ignoram isso — com dados reais dos Estados Unidos."*
 
 ---
 
-## ⏱️ NASCIMENTO — ADA e Processos nos EUA [2:30 – 4:30] (2 minutos)
+## ⏱️ Enzo N. — ADA e Processos nos EUA [2:30 – 4:30] (2 minutos)
 
 [SLIDE 6: Título "ADA + Números que Fazem CEO Perder o Sono"]
 [SLIDE 7: Gráfico de barras — crescimento de processos ADA 2018–2022]
 
-**Nascimento:**
+**Enzo N.:**
 
 "Obrigado, Rogerio. Se a LBI mostra a lei brasileira, os dados americanos
 mostram o que acontece quando empresas ignoram essas leis."
@@ -744,19 +744,19 @@ corrigir. O processo levou anos."
 "A lição é simples: consertar acessibilidade depois custa 100 vezes mais
 do que construir acessível desde o início."
 
-*"Enzo vai nos mostrar as ferramentas brasileiras que nos permitem fazer
+*"Enzo C. vai nos mostrar as ferramentas brasileiras que nos permitem fazer
 exatamente isso — construir certo desde o começo."*
 
 ---
 
-## ⏱️ ENZO — e-MAG e Ferramentas Brasileiras [4:30 – 6:00] (1 min 30 seg)
+## ⏱️ Enzo C. — e-MAG e Ferramentas Brasileiras [4:30 – 6:00] (1 min 30 seg)
 
 [SLIDE 10: Título "e-MAG + ASES + VLibras — O Arsenal Brasileiro"]
 [SLIDE 11: Diagrama das 6 seções do e-MAG com ícones]
 
-**Enzo:**
+**Enzo C.:**
 
-"Obrigado, Nascimento. Aqui no Brasil, temos um modelo técnico oficial
+"Obrigado, Enzo N.. Aqui no Brasil, temos um modelo técnico oficial
 de acessibilidade chamado e-MAG — Modelo de Acessibilidade em Governo
 Eletrônico. Ele adapta os padrões internacionais para a realidade
 brasileira, incluindo suporte obrigatório a Libras."
@@ -792,7 +792,7 @@ que entrou em vigor este ano."*
 
 **Noé:**
 
-"Obrigado, Enzo. Para encerrar o quadro técnico: a WCAG — Web Content
+"Obrigado, Enzo C.. Para encerrar o quadro técnico: a WCAG — Web Content
 Accessibility Guidelines — é o padrão publicado pelo W3C, o consórcio
 internacional que define os padrões da web. É referenciada pela LBI
 brasileira, pela ADA americana e, como vou mostrar, pela nova lei europeia."
@@ -827,7 +827,7 @@ queira crescer globalmente precisa nascer acessível."
 [SLIDE 18: Slide final — Logo GlitchStore + checklist MVP + próximos passos]
 [SLIDE 19: "Obrigado | Squad NexCode | Perguntas?"]
 
-**Enzo (retomando a palavra):**
+**Enzo C. (retomando a palavra):**
 
 "Para resumir: o Squad NexCode pesquisou 4 marcos legais — LBI, ADA,
 e-MAG e WCAG/EAA — e construiu com base neles o planejamento completo
@@ -859,14 +859,14 @@ Por que as decisões foram tomadas assim
 Sobre o nicho escolhido: "GlitchStore — periféricos gamer e jogos indie" foi escolhido porque conecta diretamente ao universo de vocês (16 anos, cultura tech), torna exemplos de acessibilidade mais concretos ("imagine um gamer com deficiência motora querendo comprar um controle adaptado"), e dá uma identidade visual forte para os slides.
 Sobre a divisão de tarefas futuras:
 •	Rogerio → Figma porque sua pesquisa sobre LBI e proteção legal exige entender o produto por inteiro antes de construir — visão sistêmica de quem projeta interfaces.
-•	Nascimento → Front-end porque a pesquisa de processos americanos (dados, casos reais) demonstra mentalidade analítica e orientada a evidências — perfil de quem implementa e valida.
-•	Enzo → Back-end + BD porque a pesquisa de ferramentas (ASES, VLibras, e-MAG) envolve integração de sistemas, APIs e documentação técnica — exatamente o perfil de back-end.
+•	Enzo N. → Front-end porque a pesquisa de processos americanos (dados, casos reais) demonstra mentalidade analítica e orientada a evidências — perfil de quem implementa e valida.
+•	Enzo C. → Back-end + BD porque a pesquisa de ferramentas (ASES, VLibras, e-MAG) envolve integração de sistemas, APIs e documentação técnica — exatamente o perfil de back-end.
 •	Noé → Documentação + QA porque a pesquisa de WCAG e EAA exige precisão técnica e atenção a critérios detalhados — perfil ideal para quem vai auditar o produto.
 Sobre as 5 fontes: Todas são fontes reais e verificáveis — W3C, Planalto, Gov.br, UsableNet, EUR-Lex. Os formatos de citação seguem a ABNT (fontes 1–3) e o padrão internacional (4–5). Podem verificar todas as URLs.
 Sobre o infográfico textual: Transformei em roteiro de produção detalhado porque a instrução proibiu geração de imagem, mas o roteiro que está na Parte 1 é suficiente para qualquer membro da equipe montar no Canva em 30–40 minutos seguindo passo a passo.
 ________________________________________
 ✅ Checklist do que vocês precisam fazer fisicamente antes da entrega
-GitHub (Enzo ou quem tiver mais familiaridade):
+GitHub (Enzo C. ou quem tiver mais familiaridade):
 •	Criar repositório: glitchstore-squad-nexcode (público)
 •	Criar arquivo README.md e colar o conteúdo da Parte 1 completo
 •	Adicionar todos os 4 integrantes como colaboradores
@@ -876,7 +876,7 @@ Infográfico (Rogerio ou Noé — quem tiver mais habilidade no Canva):
 •	Seguir o roteiro da Seção "Roteiro do Infográfico" do README ponto a ponto
 •	Exportar em PNG alta resolução E em PDF
 •	Subir no /docs do GitHub
-Word (Nascimento edita, todos revisam):
+Word (Enzo N. edita, todos revisam):
 •	Copiar o conteúdo da Parte 2 para um documento .docx novo
 •	Aplicar estilos de Título 1, Título 2, corpo de texto do Word
 •	Adicionar cabeçalho com nome da escola e data de entrega
@@ -890,5 +890,3 @@ Dia da apresentação:
 •	Chegarem juntos e testarem o projetor antes da aula começar
 •	Cada um ter o roteiro na mão (não decorado — lido de forma natural)
 •	Rogerio fecha no computador, avança os slides
-
-
