@@ -99,6 +99,44 @@ O modelo está segmentado em seis dimensões:
 
 ---
 
+# Enzo nascimento - ADA
+## O que é a ADA?
+
+A Americans with Disabilities Act (1990) é a lei federal americana que
+proíbe discriminação contra pessoas com deficiência. O Título III exige
+que "lugares de acomodação pública" sejam acessíveis — e os tribunais
+americanos consolidaram o entendimento de que sites e apps de empresas
+comerciais se enquadram nessa categoria.
+
+## Os números que assustam qualquer empreendedor
+
+Segundo o Relatório UsableNet 2023:
+- 4.605 ações judiciais federais por acessibilidade web nos EUA em 2022
+- Alta de 12% em relação ao ano anterior
+- E-commerce corresponde a ~80% dos casos
+- Acordo médio: US$ 25.000 a US$ 100.000 (mais honorários)
+- Empresas pequenas também foram processadas — tamanho não é proteção
+
+## Caso Domino's Pizza v. Robles (2019)
+
+Guillermo Robles, deficiente visual usuário de leitor de tela, não
+conseguiu fazer um pedido pelo app e site da Domino's. Após batalha
+judicial, o 9º Circuito Federal decidiu: a ADA cobre plataformas
+digitais. O caso foi ao Supremo e devolvido ao tribunal de origem,
+consolidando o precedente. A Domino's teve que adequar suas plataformas.
+
+Lição direta: uma única funcionalidade inacessível no checkout pode
+gerar um processo que custa dezenas de vezes mais do que teria custado
+corrigir o problema.
+
+## Caso Target Corporation (2008)
+
+Processo coletivo movido pela National Federation of the Blind. Imagens
+sem alt text, formulários sem labels, estrutura de navegação inacessível.
+Acordo: US$ 6 milhões para os afetados + remediação técnica completa
+do site. Um dos primeiros marcos do e-commerce em acessibilidade.
+
+
 ### 1.4 Noé — WCAG 2.1/2.2 e EAA (European Accessibility Act)
 
 #### Diretrizes WCAG
