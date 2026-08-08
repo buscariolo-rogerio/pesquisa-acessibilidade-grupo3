@@ -59,7 +59,7 @@ export class UsuarioModel{
     static async login(userLogin){
         const {email,senha} = userLogin
 
-        const data = await pool.query(`SELECT * WHERE EMAIL = $1 AND SENHA = $2`,[
+        const data = await pool.query(`SELECT * FROM USUARIOS WHERE EMAIL = $1 AND SENHA = $2`,[
             email,senha
         ])
         

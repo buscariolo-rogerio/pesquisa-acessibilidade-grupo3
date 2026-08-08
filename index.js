@@ -48,13 +48,13 @@ app.get("/user/:id", async (req,res) => {
 }  )
 
 
-app.get("/user/login",(req,res) => {
+app.get("/login",async (req,res) => {
     const data = userLogin.safeParse(req.query) 
     if (!data.success){
         res.status(400).json({success:false, message:`erro no envio dos dados ${data.error}`})
     }
     try{
-        const user = UsuarioModel.login(data.data)
+        const user = await UsuarioModel.login(data.data)
         if (user){
             res.status(200).json({success:true,data:user}) 
         }
