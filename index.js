@@ -14,7 +14,7 @@ app.get("/", async  (req,res) => {
     res.status(200).json({message:"tudo certo"})
 })
 
-app.post("/user",async (req,res) => {
+app.post("/cadastro",async (req,res) => {
     const resultado = criarUser.safeParse(req.body)
 
         if (!resultado.success){
