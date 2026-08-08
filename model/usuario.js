@@ -1,7 +1,7 @@
 import {z} from 'zod'
 import { pool } from '../database/connection.js'
 
-export  const UsuarioModelo = z.object({
+export  const usuarioModelo = z.object({
     id: z.number().int().positive(),
     nome: z.string().max(100),
     sobrenome: z.string().max(100),
@@ -30,9 +30,7 @@ export const criarUser = UsuarioModelo.omit({
     id:true,
 })
 
-export const idParse = z.object({
-    id:z.coerce.number()
-})
+
 
 export const userLogin = UsuarioModelo.pick({
     email:true,
