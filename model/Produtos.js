@@ -39,7 +39,7 @@ export const criarProduto = ProdutoModel.omit(
 
 export class ProdutoModel{
     static async inserirProduto(criarProduto){
-        
+
         const {categoria,marca,nome,descricao,preco,estoque,imagem,destaque,ativo,criado_em} = criarProduto
 
 
@@ -50,5 +50,10 @@ export class ProdutoModel{
 
         return data.rows[0]
 
+    }
+
+
+    static async selectAll (){
+        return (await pool.query(`SELECT * FROM PRODUTOS`)).rows[0]
     }
 }
