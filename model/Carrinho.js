@@ -1,4 +1,6 @@
 import { z } from "zod";
 
 
-export const 
+export const CarrinhoModel = z.object({
+    
+})

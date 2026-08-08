@@ -1,6 +1,6 @@
 import express from 'express'
 import { pool } from './database/connection.js'
-import {criarUser, UsuarioModelo,UsuarioModel, idParse, userLogin}  from './model/usuario.js'
+import {criarUser, UsuarioModelo,UsuarioModel, idParse, userLogin}  from './model/Usuario.js'
 import { ca } from 'zod/locales'
 import {  success } from 'zod'
 import "dotenv/config"

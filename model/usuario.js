@@ -7,16 +7,24 @@ export  const UsuarioModelo = z.object({
     sobrenome: z.string().max(100),
     email: z.string().email("Email deve ser válido").nonempty("").max(150, "deve ser menos que 150"),
     senha : z.string().nonempty().max(255),
-    cpf: z.string().length(14,"cpf deve ter 14 números") /*TODO: fazer check com regex*/ ,
+    cpf: z.stringFormat("cpf", (value) => /^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(value),
+  {
+    message: "CPF inválido",
+  }), 
     data_nascimento: z.coerce.date("Valor inválido de data"),
-    foto_perfil : z.string(),
-    nivel : z.string().default("cliente"),
+    foto_perfil : z.string().nullable().optional(),
+    nivel : z.string().optional().nullable().default("cliente"),
     criado_em: z
             .coerce
             .date({ message: "Valor de data e hora inválido" })
             .default(() => {return new Date()})
     
 })
+.transform((data) => ({
+    dataNascimento:data.data_nascimento,
+    fotoPerfil: data.foto_perfil,
+    criadoEm:data.criado_em
+}))
 
 export const criarUser = UsuarioModelo.omit({
     id:true,
