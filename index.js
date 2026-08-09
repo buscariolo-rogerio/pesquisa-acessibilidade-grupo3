@@ -1,9 +1,11 @@
 import express from 'express'
 import { pool } from './database/connection.js'
-import {criarUser, UsuarioModelo,UsuarioModel, idParse, userLogin}  from './model/Usuario.js'
+import {criarUser, usuarioModelo,UsuarioModel,  userLogin}  from './model/Usuario.js'
+import { idParse } from './model/IdParse.js'
 import { ca } from 'zod/locales'
 import {  success } from 'zod'
 import "dotenv/config"
+import { criarProduto, ProdutoModel } from './model/Produtos.js'
 const app = express()
 const port = Number(process.env.PORT)|3000
 
@@ -48,8 +50,8 @@ app.get("/user/:id", async (req,res) => {
 }  )
 
 
-app.get("/login",async (req,res) => {
-    const data = userLogin.safeParse(req.query) 
+app.post("/login",async (req,res) => {
+    const data = userLogin.safeParse(req.body) 
     if (!data.success){
         res.status(400).json({success:false, message:`erro no envio dos dados ${data.error}`})
     }
@@ -64,6 +66,24 @@ app.get("/login",async (req,res) => {
     }
     catch(error){
         res.status(500).json({success:false,message:`Erro no servidor: ${error}`})
+    }
+})
+
+
+
+
+
+app.get("/products",async  (req,res) => {
+
+    const data = await  ProdutoModel.selectAll()
+
+
+    console.log(data)
+    try{
+        res.status(200).json({success:true, data: data })
+    }
+    catch(error){
+        res.status(500).json({success:false,message:`erro no servidor ${error}`})
     }
 })
 

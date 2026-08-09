@@ -1,5 +1,5 @@
 import z from "zod";
-import { pool } from "../database/connection";
+import { pool } from "../database/connection.js";
 
 
 
@@ -9,7 +9,7 @@ export const produtoModel = z.object({
     categoria_id: z.number().int().positive(),
     marca_id: z.number().int().positive(),
     nome: z.string().max(150),
-    descricao: z.string().optional().nullable().default(`Produto ${ProdutoModel.nome}`),
+    descricao: z.string().optional().nullable(),
     preco: z.number().positive(),
     estoque: z.number().int().positive().default(0),
     imagem_principal : z.string().max(255).nullable().optional(),
@@ -21,15 +21,10 @@ export const produtoModel = z.object({
 
 
 })
-.transform( (data) => ({
-    categoriaId: data.categoria_id,
-    marcaId:data.marca_id,
-    descricao : data.descricao ?? `produto ${data.nome}`,
-    imagemPrincipal : data.imagem_principal,
-}))
 
 
-export const criarProduto = ProdutoModel.omit(
+
+export const criarProduto = produtoModel.omit(
     {
         id : true
     }
@@ -54,6 +49,6 @@ export class ProdutoModel{
 
 
     static async selectAll (){
-        return (await pool.query(`SELECT * FROM PRODUTOS`)).rows[0]
+        return (await pool.query(`SELECT * FROM PRODUTOS`)).rows
     }
 }

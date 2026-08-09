@@ -20,19 +20,15 @@ export  const usuarioModelo = z.object({
             .default(() => {return new Date()})
     
 })
-.transform((data) => ({
-    dataNascimento:data.data_nascimento,
-    fotoPerfil: data.foto_perfil,
-    criadoEm:data.criado_em
-}))
 
-export const criarUser = UsuarioModelo.omit({
+
+export const criarUser = usuarioModelo.omit({
     id:true,
 })
 
 
 
-export const userLogin = UsuarioModelo.pick({
+export const userLogin = usuarioModelo.pick({
     email:true,
     senha:true
 })
