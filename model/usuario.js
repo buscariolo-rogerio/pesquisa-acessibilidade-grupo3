@@ -11,7 +11,7 @@ export  const usuarioModelo = z.object({
   {
     message: "CPF inválido",
   }), 
-    data_nascimento: z.coerce.date("Valor inválido de data"),
+    data_nascimento: z.coerce.date("Valor inválido de data").nullable().optional(),
     foto_perfil : z.string().nullable().optional(),
     nivel : z.string().optional().nullable().default("cliente"),
     criado_em: z
