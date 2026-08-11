@@ -1,5 +1,6 @@
 import {z} from 'zod'
 import { pool } from '../database/connection.js'
+import { es } from 'zod/locales'
 
 export  const usuarioModelo = z.object({
     id: z.number().int().positive(),
@@ -24,6 +25,17 @@ export  const usuarioModelo = z.object({
 
 export const criarUser = usuarioModelo.omit({
     id:true,
+}).extend({
+    apelido: z.string().max(50).nullable().optional(),
+    cep: z.string().length(9),
+    logradouro: z.string().max(150),
+    numero : z.number().int().positive(),
+    complemento:z.string().max(100).nullable().optional(),
+    bairro:z.string().max(100),
+    cidade: z.string().max(100),
+    estado:z.string().length(2),
+    principal : z.boolean().default(true)
+
 })
 
 
@@ -41,13 +53,32 @@ export class UsuarioModel{
     }
 
     static async criarUsuario(model){
-        const {nome,sobrenome,email,senha,cpf,data_nascimento,foto_perfil,nivel} = model
+    try{
+        const {nome,sobrenome,email,senha,cpf,data_nascimento,foto_perfil,nivel,apelido,cep,logradouro,numero,complemento,bairro,cidade,estado,principal} = model
+
+        
 
         const data = await pool.query(`INSERT INTO USUARIOS (NOME,SOBRENOME,EMAIL,SENHA,CPF,DATA_NASCIMENTO,FOTO_PERFIL,NIVEL) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING *`,
             [nome,sobrenome,email,senha,cpf,data_nascimento,foto_perfil,nivel]
         )
 
-        return data.rows[0]
+        const dataEndereco = await (pool.query("INSERT INTO ENDERECOS (USUARIO_ID,APELIDO,CEP,LOGRADOURO,NUMERO,COMPLEMENTO,BAIRRO,CIDADE,ESTADO,PRINCIPAL) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10) RETURNING *",[
+            data.rows[0].id,
+            apelido,
+            cep,
+            logradouro,
+            numero,
+            complemento,
+            bairro,
+            cidade,
+            estado,
+            principal
+        ]))
+
+        return {usuario:data.rows[0],endereco: dataEndereco.rows[0]}
+    }catch(error){
+        throw Error(`Erro no banco ${error}`)
+    }
 
     }
 

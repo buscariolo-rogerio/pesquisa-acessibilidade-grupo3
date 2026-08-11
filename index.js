@@ -2,10 +2,11 @@ import express from 'express'
 import { pool } from './database/connection.js'
 import {criarUser, usuarioModelo,UsuarioModel,  userLogin}  from './model/Usuario.js'
 import { idParse } from './model/IdParse.js'
-import { ca } from 'zod/locales'
+import { ca, id } from 'zod/locales'
 import {  success } from 'zod'
 import "dotenv/config"
 import { criarProduto, ProdutoModel, updatePreco } from './model/Produtos.js'
+import { addItems, CarrinhoModel, criarCarrinho } from './model/Carrinho.js'
 const app = express()
 const port = Number(process.env.PORT)|3000
 
@@ -167,6 +168,43 @@ app.delete("/products/:id", async (req,res) => {
     } catch (error) {
         
     }
+
+
+    
+
+
+
+})
+
+app.post("/carrinho", async (req,res) => {
+    const request = addItems.safeParse(req.body)
+
+    if(!request.success){
+        return res.status(400).json({success:false,message:`Erro no envio do body ${request.error}`})
+    }
+    
+    try{
+        const carrinho = request.data
+
+
+        
+        const data = (await CarrinhoModel.insertCarrinhoItems(carrinho))
+        console.log(data)
+        
+        if(!data[0]){
+            return res.status(400).json({success:false,message:`${data[1]}`})
+        }
+
+
+        return res.status(201).json({success:true,data:data[1]})
+    }
+
+    catch(error){
+        return res.status(500).json({success:false,message:`${error}`})
+    }
+    
+    
+
     
 
 
