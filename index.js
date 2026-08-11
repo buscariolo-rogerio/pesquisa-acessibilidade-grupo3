@@ -7,6 +7,7 @@ import {  success } from 'zod'
 import "dotenv/config"
 import { criarProduto, ProdutoModel, updatePreco } from './model/Produtos.js'
 import { addItems, CarrinhoModel, criarCarrinho } from './model/Carrinho.js'
+import { PedidoModel, pedidoModelCompleto } from './model/Pedidos.js'
 const app = express()
 const port = Number(process.env.PORT)|3000
 
@@ -203,12 +204,30 @@ app.post("/carrinho", async (req,res) => {
         return res.status(500).json({success:false,message:`${error}`})
     }
     
+})
+
+app.post("/pedido",async (req,res) => {
+    const pedidoModel = pedidoModelCompleto.safeParse(req.body)
     
 
-    
+    if (!pedidoModel.success){
+        return res.status(422).json({sucess:false,message:`${pedidoModel.error}`})
+    }
+
+    try{       
+        const data = await PedidoModel.insertPedido(pedidoModel.data)
+
+        if(!data[0]){
+            return res.status(400).json({sucess:false,message:data[1]})
+        }
+        return res.status(201).json({sucess:true,data:data[1]})
 
 
 
+    }
+    catch(error){
+        return res.status(500).json({sucess:false,message:`${error}`})
+    }
 })
 
 

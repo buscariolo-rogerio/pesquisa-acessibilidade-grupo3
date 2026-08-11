@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { produtoPraCarrinho } from "./Produtos.js";
+import { ProdutoModel, produtoPraCarrinho } from "./Produtos.js";
 import { pool } from "../database/connection.js";
 import { compose } from "z/src/utils.js";
 
@@ -27,7 +27,7 @@ export const criarCarrinho = carrinhoModel.omit(
 export class CarrinhoModel{
 
     static async insertCarrinho (criarCarrinho){
-        const {usuario_id,criado_em} = criarCarrinho
+        const usuario_id = criarCarrinho
 
         
 
@@ -48,15 +48,15 @@ export class CarrinhoModel{
     static async insertCarrinhoItems(addItems){
         try{
         const {usuario_id,produtos} = addItems
+        console.log(produtos)
         const carr =  (await this.insertCarrinho(usuario_id)).id
-        console.log("carr")
-        console.log(carr)
+
         const carrinho = {carrinho_id : carr, itens : []}
 
         for (const produto of produtos) {
 
         const result = await pool.query(
-            `SELECT ESTOQUE, NOME
+            `SELECT ESTOQUE, NOME,PRECO
              FROM PRODUTOS
              WHERE ID = $1`,
             [produto.id]
@@ -81,6 +81,8 @@ export class CarrinhoModel{
             await pool.query(`UPDATE PRODUTOS SET ESTOQUE = ESTOQUE - $1 WHERE ID = $2 `, [produto.quantidade,produto.id])
 
             const produtoInserido = (await pool.query(`INSERT INTO ITENS_CARRINHO (CARRINHO_ID,PRODUTO_ID,QUANTIDADE) VALUES ($1,$2,$3) RETURNING PRODUTO_ID, QUANTIDADE`, [carr,produto.id,produto.quantidade])).rows[0]
+
+            produtoInserido.preco = produtoBanco.preco
 
             carrinho.itens.push(produtoInserido)
             
