@@ -6,7 +6,6 @@ import { pool } from "../database/connection.js";
 
 export const produtoModel = z.object({
     id : z.number().int().positive(),
-    categoria_id: z.number().int().positive(),
     marca_id: z.number().int().positive(),
     nome: z.string().max(150),
     descricao: z.string().optional().nullable(),
@@ -59,8 +58,8 @@ export class ProdutoModel{
     criado_em} = criarProduto
 
 
-        const data = await pool.query(`INSERT INTO PRODUTOS (CATEGORIA_ID,MARCA_ID,NOME,DESCRICAO,PRECO,ESTOQUE,IMAGEM_PRINCIPAL,DESTAQUE,ATIVO,CRIADO_EM) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10) RETURNING *`, [
-categoria_id,
+        const data = await pool.query(`INSERT INTO PRODUTOS (MARCA_ID,NOME,DESCRICAO,PRECO,ESTOQUE,IMAGEM_PRINCIPAL,DESTAQUE,ATIVO,CRIADO_EM) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9) RETURNING *`, [
+
     marca_id,
     nome,
     descricao,

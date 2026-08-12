@@ -9,6 +9,7 @@ import { PedidoModel, pedidoModelCompleto, statusModel } from './model/Pedidos.j
 import { acessibilidadeInsert, AcessibilidadeModel } from './model/Acessibilidade.js'
 import listEndpoints from 'express-list-endpoints'
 import { es } from 'zod/locales'
+import { MarcaModel } from './model/marcas.js'
 
 
 
@@ -344,7 +345,42 @@ app.patch("/pedidos/:id", async (req, res) => {
 
 })
 
+app.get("/marcas", async (req,res) => {
+    try{
+        const data = await MarcaModel.selectAll()
+        return res.status(200).json({sucess:true,data: data})
+    }
+    catch(error){
+        return res.status(500).json({sucess:false,message:error})
+    }
+})
 
+
+app.get("/marcas/:id", async (req, res) => {
+    try {
+        const id = idParse.safeParse(req.params);
+
+        if (!id.success) {
+            return res.status(400).json({
+                success: false,
+                message: id.error
+            });
+        }
+
+        const data = await MarcaModel.selectMarcaById(id.data.id);
+
+        return res.status(200).json({
+            success: true,
+            data
+        });
+
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            message: error.message
+        });
+    }
+});
 
 
 app.listen(port, () => {
