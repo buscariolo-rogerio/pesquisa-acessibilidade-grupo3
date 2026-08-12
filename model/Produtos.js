@@ -40,6 +40,10 @@ export const updatePreco = produtoModel.pick({
 })
 
 
+export const updateEstoque = produtoModel.pick({
+    estoque:true
+})
+
 export class ProdutoModel{
     static async inserirProduto(criarProduto){
 
@@ -84,6 +88,10 @@ categoria_id,
 
     static async updatePrice(id,preco){
         return (await pool.query(`UPDATE PRODUTOS SET PRECO = $1 WHERE ID = $2 RETURNING *`, [preco,id])).rows[0]
+    }
+
+    static async updateEstoque(id,estoque){
+        return (await pool.query(`UPDATE PRODUTOS SET ESTOQUE = $1 WHERE ID = $2 RETURNING *`, [estoque,id])).rows[0]
     }
 
     static async deleteProduct(id){

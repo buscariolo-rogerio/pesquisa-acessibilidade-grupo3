@@ -14,6 +14,9 @@ export const pedidoModel = z.object({
 
 export const pedidoModelCompleto = pedidoModel.extend(addItems.shape).omit({id:true,carrinho_id:true})
 
+export const statusModel = pedidoModel.pick({
+  status:true
+})
 
 
 export class PedidoModel{
@@ -84,6 +87,17 @@ export class PedidoModel{
   } catch (error) {
     console.log(error);
     return [false, error.message];
+  }
+}
+
+static async updateStatus(id_pedido,status_novo){
+  
+  try{
+    const data = await pool.query("UPDATE  PEDIDOS SET STATUS = $1 WHERE ID = $2 RETURNING *",[status_novo,id_pedido])
+    return [true,data.rows[0]]
+  }
+  catch(er){
+    return [false,er]
   }
 }
 }
