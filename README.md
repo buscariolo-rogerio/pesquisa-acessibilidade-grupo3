@@ -4,6 +4,34 @@
 
 ---
 
+## Como executar o projeto completo
+
+Pré-requisito: Docker Desktop aberto.
+
+```powershell
+Copy-Item .env.example .env
+docker compose up -d --build
+```
+
+Depois, acesse `http://localhost:3000`.
+
+Comandos úteis:
+
+```powershell
+# Verificar os serviços
+docker compose ps
+
+# Acompanhar os logs
+docker compose logs -f app banco
+
+# Encerrar sem apagar os dados do PostgreSQL
+docker compose down
+```
+
+O Express entrega o front-end e a API na mesma origem. O PostgreSQL é criado e preenchido automaticamente na primeira execução.
+
+---
+
 ## 📋 Sobre o Projeto
 
 A **EREN** consiste no *Minimum Viable Product* (MVP) de um comércio eletrônico especializado em periféricos, jogos independentes e equipamentos tecnológicos de alto desempenho. O escopo desta fase inicial concentra-se no planejamento estratégico e na fundamentação legal e técnica: compreender as legislações e as diretrizes de acessibilidade digital essenciais para a viabilidade do produto, documentando todos os requisitos antes do início do desenvolvimento.
